@@ -10,4 +10,19 @@ class ApplicationController < ActionController::Base
   	session[:cart_id] = cart.id
     cart
   end
+  
+
+  def number_of_items_in_cart
+    current_cart.line_items.sum(:quantity)
+  end
+
+#################SEANS CODE######REPLACED BY METHOD ABOVE##########################
+#  def number_of_items_in_cart
+#    number_of_items = 0
+#    current_cart.line_items.each do |item|
+#      number_of_items += item.quantity
+#    end
+#    number_of_items
+#  end
+###################################################################################
 end

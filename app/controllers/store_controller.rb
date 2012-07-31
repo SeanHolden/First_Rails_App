@@ -1,8 +1,10 @@
 class StoreController < ApplicationController
+  
   def index
   	@products = Product.order(:title)
   	@time = Time.now
   	increment_session_counter
+    @total_items = number_of_items_in_cart
   end
 
   def increment_session_counter
@@ -10,4 +12,6 @@ class StoreController < ApplicationController
     session[:counter] += 1
     @sessioncounter = session[:counter]
   end
+
+
 end

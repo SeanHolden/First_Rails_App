@@ -14,6 +14,10 @@ class CartsController < ApplicationController
   # GET /carts/1.json
   def show
     @cart = Cart.find(params[:id])
+    
+    #################SEANS CODE###########################
+    @total_items = number_of_items_in_cart # method defined in ApplicationController
+    ######################################################
 
     respond_to do |format|
       format.html # show.html.erb
@@ -76,7 +80,7 @@ class CartsController < ApplicationController
     @cart.destroy
 
     respond_to do |format|
-      format.html { redirect_to carts_url }
+      format.html { redirect_to store_path }
       format.json { head :no_content }
     end
   end

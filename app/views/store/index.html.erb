@@ -3,6 +3,11 @@
 <% end %>
 
 <h1>Your Pragmatic Catalog</h1>
+
+<%########################SEAN'S CODE##################################################%>
+<p><strong><%= pluralize(@total_items, 'item' ) %> currently in your cart</strong></p>
+<%#####################################################################################%>
+
 <% if @sessioncounter > 5 %>
   <h1>Visited this site: <%= pluralize(@sessioncounter, 'time' )%></h1>
 <% end %>
