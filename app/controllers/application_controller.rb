@@ -11,10 +11,11 @@ class ApplicationController < ActionController::Base
     cart
   end
   
-
+#################SEAN'S CODE#################################
   def number_of_items_in_cart
     current_cart.line_items.sum(:quantity)
   end
+###########################################################
 
 #################SEANS CODE######REPLACED BY METHOD ABOVE##########################
 #  def number_of_items_in_cart
