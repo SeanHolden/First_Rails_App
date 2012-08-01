@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
   end
 ###########################################################
 
+
 #################SEANS CODE######REPLACED BY METHOD ABOVE##########################
 #  def number_of_items_in_cart
 #    number_of_items = 0
