@@ -1,4 +1,10 @@
-<tr>
+<%# if current item is selected, highlight it with js (create.js.erb) %>
+<% if line_item == @current_item %>
+  <tr id="current_item">
+<% else %>
+  <tr>
+<% end %>
+
 	<%# the variable used has to be same name as the file, in this case 'line_item' %>
   <td><%= line_item.quantity %>&times;</td>
   <td><%= line_item.product.title %><br />
