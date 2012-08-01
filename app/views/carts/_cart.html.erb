@@ -1,0 +1,20 @@
+<div class="cart_title">Your Cart</div> 
+
+<%###########################SEANS CODE###################################################%>
+<p><strong>Number of items currently in cart: <%= @total_items %></strong></p>
+<%########################################################################################%>
+
+<table>
+  
+  <%= render(@cart.line_items) %> <%# renders the page app/views/line_items/_line_item.html.erb, iterates %>
+                                  <%# originally was a loop: @cart.line_items.each do |item|%>
+
+  <tr class="total_line">
+	  <td colspan="2">Total</td>
+    <td class="total_cell"><%= number_to_currency(@cart.total_price, :unit => "£") %></td> 
+  </tr>
+
+</table>
+
+<%= link_to 'Continue Shopping', store_path %> <br />
+<p><%= button_to 'Empty Cart', @cart, confirm: 'Are you sure you want to empty your cart?', method: :delete %></p>
