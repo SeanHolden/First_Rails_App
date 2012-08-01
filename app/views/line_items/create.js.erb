@@ -1,3 +1,8 @@
+<%# add a "blind" effect for when the user adds an item. 1000 is the length of time it takes to display %>
+if ($('#cart tr').length == 1) { 
+	  $('#cart').show('blind', 1000); 
+      }
+
 <%# Find the HMTL element with an ID of 'cart', replace the content with current_cart?? %>
 $('#cart').html("<%=j render @cart %>");
 

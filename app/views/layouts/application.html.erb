@@ -17,11 +17,18 @@
 
 	<div id="columns">
   	<div id="side"> 
-      <div id="cart">
+
+      <%# If there is nothing in the cart, hide it (hidden_div_if is a method defined in application_helper.rb in the helpers directory) %>
+      <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
         <%= render @cart %>
-      </div>
+      <% end %>
+
+      
+
       <p style="color: white;"><%= @time %></p>
-    	<ul>
+    	
+
+      <ul>
       	<li><a href="http://www....">Home</a></li>
       	<li><a href="http://www..../faq">Questions</a></li> 
       	<li><a href="http://www..../news">News</a></li> 
